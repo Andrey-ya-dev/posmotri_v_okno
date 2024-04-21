@@ -72,12 +72,15 @@ ol {
   background-color: #545050;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .content {
   display: flex;
   align-items: end;
   gap: 30px;
   inline-size: 1140px;
-  block-size: 534px;
 }
 
 .result__video-container {
@@ -118,6 +121,12 @@ ol {
   gap: 5px;
   cursor: pointer;
   block-size: fit-content;
+  align-items: center;
+  padding: 1px 0 1px 1px;
+}
+
+.search-form__label:has(.button) {
+  align-self: end;
 }
 
 .search-form__label:hover .search-form__label-text {
@@ -146,7 +155,8 @@ ol {
 }
 
 .search-form__label:has(.search-form__textfield:focus-visible),
-.search-form__label:has(.search-form__checkbox:focus-visible) {
+.search-form__label:has(.search-form__checkbox:focus-visible),
+.search-form__label:has(.button:focus-visible) {
   outline: 1px solid #fff;
 }
 
@@ -210,6 +220,8 @@ ol {
   overflow: hidden auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  block-size: 298px;
+  padding: 1px;
 }
 
 .content__list-item:not(:last-child) {
@@ -228,7 +240,8 @@ ol {
   text-decoration: none;
 }
 
-.content__card-link_current {
+.content__card-link_current,
+.content__card-link:active {
   background-color: #545050;
 }
 
@@ -277,6 +290,10 @@ ol {
 }
 
 .more-button {
-  margin-bottom: 1px;
   inline-size: 100%;
+}
+
+li:last-child:has(.more-button:focus-visible) {
+  outline: 1px solid #fff;
+  padding: 1px;
 }
