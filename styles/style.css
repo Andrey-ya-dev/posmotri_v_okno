@@ -76,6 +76,10 @@ ol {
   outline: none;
 }
 
+.button:focus-visible {
+  outline: double #fff;
+}
+
 .content {
   display: flex;
   align-items: end;
@@ -125,10 +129,6 @@ ol {
   padding: 1px 0 1px 1px;
 }
 
-.search-form__label:has(.button) {
-  align-self: end;
-}
-
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
@@ -154,9 +154,7 @@ ol {
   outline: none;
 }
 
-.search-form__label:has(.search-form__textfield:focus-visible),
-.search-form__label:has(.search-form__checkbox:focus-visible),
-.search-form__label:has(.button:focus-visible) {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
 }
 
@@ -221,7 +219,7 @@ ol {
   scroll-behavior: smooth;
   scrollbar-width: none;
   block-size: 298px;
-  padding: 1px;
+  padding: 3px;
 }
 
 .content__list-item:not(:last-child) {
@@ -245,7 +243,7 @@ ol {
   background-color: #545050;
 }
 
-.content__card-link:hover .content__video-card {
+.content__card-link:hover {
   text-decoration: underline;
 }
 
@@ -291,9 +289,4 @@ ol {
 
 .more-button {
   inline-size: 100%;
-}
-
-li:last-child:has(.more-button:focus-visible) {
-  outline: 1px solid #fff;
-  padding: 1px;
 }
